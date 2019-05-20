@@ -2,12 +2,15 @@
   "name": "pinyin-conversion-service",
   "version": "1.0.0",
   "author": "Sean Smith",
-  "description": "Pinyin conversion service",
+  "description": "Pinyin Conversion Service",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "license": "Apache-2.0",
+  "scripts": {
+    "start": "node index.js",
+    "get-id": "gcloud config get-value project",
+    "update": "gcloud builds submit --tag gcr.io/[PROJECT-ID]/pinyin-conversion-service",
+    "deploy": "gcloud beta run deploy --image gcr.io/[PROJECT-ID]/pinyin-conversion-service"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "pinyin-convert": "^1.11.0"
