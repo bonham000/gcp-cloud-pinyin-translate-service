@@ -2,16 +2,18 @@ const express = require("express");
 const app = express();
 const pinyinConverter = require("pinyin-convert");
 
-app.get("/", (req, res) => {
-  console.log("Hello world received a request.");
-  const target = process.env.TARGET || "World";
-  res.send(`Hello ${target}!`);
-});
+app.get("/convert", async (req, res) => {
+  let result = "";
 
-app.post("convert", (req, res) => {
-  const q = req.query;
-  console.log(q);
-  res.send("OK!");
+  try {
+    const { chinese } = req.query;
+    const pinyin = await pinyinConverter(chinese);
+    result = pinyin[0] || "";
+  } catch (err) {
+    console.log("Conversion failed - ", err);
+  }
+
+  res.send(result);
 });
 
 const port = process.env.PORT || 3200;
