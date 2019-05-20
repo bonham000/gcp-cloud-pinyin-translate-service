@@ -1,0 +1,18 @@
+{
+  "name": "pinyin-conversion-service",
+  "version": "1.0.0",
+  "author": "Sean Smith",
+  "description": "Pinyin conversion service",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pinyin-convert": "^1.11.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
+}
