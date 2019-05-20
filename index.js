@@ -2,11 +2,14 @@ const express = require("express");
 const app = express();
 const pinyinConverter = require("pinyin-convert");
 
+require("dotenv").config();
+
 app.get("/convert", async (req, res) => {
   let result = "";
 
   try {
     const { chinese, token } = req.query;
+
     if (token !== process.env.API_SECRET) {
       return res.sendStatus(400);
     }

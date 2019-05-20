@@ -5,6 +5,10 @@
   "description": "Pinyin Conversion Service",
   "main": "index.js",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bonham000/pinyin-conversion-service.git"
+  },
   "scripts": {
     "start": "node index.js",
     "get-id": "gcloud config get-value project",
@@ -12,6 +16,7 @@
     "deploy": "gcloud beta run deploy --image gcr.io/[PROJECT-ID]/pinyin-conversion-service"
   },
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "pinyin-convert": "^1.11.0"
   },
