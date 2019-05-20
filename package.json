@@ -11,9 +11,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "get-id": "gcloud config get-value project",
-    "update": "gcloud builds submit --tag gcr.io/[PROJECT-ID]/pinyin-conversion-service",
-    "deploy": "gcloud beta run deploy --image gcr.io/[PROJECT-ID]/pinyin-conversion-service"
+    "deploy": "node deploy.js"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
