@@ -6,7 +6,11 @@ app.get("/convert", async (req, res) => {
   let result = "";
 
   try {
-    const { chinese } = req.query;
+    const { chinese, token } = req.query;
+    if (token !== process.env.API_SECRET) {
+      return res.sendStatus(400);
+    }
+
     const pinyin = await pinyinConverter(chinese);
     result = pinyin[0] || "";
   } catch (err) {
