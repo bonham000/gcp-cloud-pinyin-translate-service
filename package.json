@@ -2,16 +2,14 @@
   "name": "pinyin-conversion-service",
   "version": "1.0.0",
   "author": "Sean Smith",
-  "description": "Pinyin Conversion Service",
+  "description": "A service to provide pinyin translations for Chinese characters",
   "main": "index.js",
-  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/bonham000/pinyin-conversion-service.git"
   },
   "scripts": {
-    "start": "node index.js",
-    "deploy": "node deploy.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
